@@ -2,8 +2,8 @@ import requests
 import os
 from numba import njit, prange
 
-api_key = "jq7E3AIDBjXr8FmfpElvgUR1MVBWsjUXksnYXvE4"
-set_url = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=" + "jq7E3AIDBjXr8FmfpElvgUR1MVBWsjUXksnYXvE4"
+api_key = None
+set_url = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=" + api_key
 
 idat = requests.get(set_url)
 print(idat.text)
