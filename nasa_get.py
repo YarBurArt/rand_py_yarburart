@@ -16,9 +16,7 @@ photos = jdat["photos"]
 
 for i in prange(len(photos)):
     xc = photos[i]["img_src"]
-
     print(xc)
-
     img_data = requests.get(str(photos[i]["img_src"])).content
     nstr = "nasa-curiosity/img_nasa_" + str(i) + ".jpg"
     with open(nstr, 'wb') as handler:
@@ -26,7 +24,3 @@ for i in prange(len(photos)):
     if i == 99:
         break
 print(f"Найдено {len(photos)} фотографий.")
-
-
-
-#os.startfile("rand.png")
