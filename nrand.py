@@ -2,6 +2,7 @@ try:
     print("[info] import module ...")
     from colorama import Fore, Back, Style
     from random import randint
+    from randomgen import ExtendedGenerator, Xoshiro512
     from PIL import Image
     from PIL.Image import Image as ImageObj
     print(Fore.GREEN + "[done] \n" , Style.RESET_ALL)
@@ -25,6 +26,8 @@ def get_rand(obj: ImageObj) -> int:
     r3:float = float(r2) / 3 
     r4:float = r3 / randint(1, 10)
     r5:float = r4 * randint(-1000000, 1000000)
+    rg = ExtendedGenerator(Xoshiro512())
+    r5 = rg.random()
     print(Fore.YELLOW+ "[data] ", Style.RESET_ALL,"pic color:", r1, "| medium color:", r3, "| seed:", r4 , Style.RESET_ALL)
     print(Fore.GREEN + "[done] \n" , Style.RESET_ALL)
     return r5
